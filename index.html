@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hsieh Lee Hsun</title>
+</head>
+
+<script>
+
+    function openTab(tabName) {
+
+        components = document.getElementsByClassName("tab");
+        for (i = 0; i < components.length; i++) {
+            components[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block"
+    }
+</script>
+
+<style>
+    * {
+        font-family: monospace;
+    }
+
+    .sidenav {
+        background-color: darkgray;
+        height: 100%;
+        width: 15%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        padding-top: 20px;
+    }
+
+    .sidenav ul {
+        width: 100%;
+        text-align: center;
+        margin: 25px, 0px;
+        padding-left: 0px;
+        /* text-decoration: none; */
+        list-style-type: none;
+        font-size: 20px;
+        color: #818181;
+    }
+
+    .sidenav li {
+        cursor: pointer;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .sidenav li:hover {
+        color: #f1f1f1;
+    }
+
+    .main {
+        margin-left: 15%;
+        padding-left: 20px;
+        padding-top: 20px;
+
+    }
+
+    .main img {
+        width: 300px;
+    }
+
+    .tab {
+        animation: fadeEffect 0.5s;
+        /* Fading effect takes 1 second */
+    }
+
+    /* Go from zero to full opacity */
+    @keyframes fadeEffect {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <ul>
+            <li onclick='openTab("aboutMe")' id="default">About me</li>
+            <li onclick='openTab("publication")'>Publication</li>
+            <li >Research interest</li>
+        </ul>
+    </div>
+
+
+    <!-- Page content -->
+    <div class="main">
+        <img src="IMG_4346.JPG">
+        <div class="tab" id="aboutMe">
+            <h2>About me</h2>
+            <ul>
+                <li>Hsieh Lee Hsun</li>
+                <li>Taiwanese</li>
+                <li>Graduate from National Cheng Kung University in Taiwan majoring in EE</li>
+                <li>Enjoy playing violin, fix my motorcycle and play vedio games</li>
+                <li>Currently work in singapore management university LARC research center as an Research Engineer</li>
+            </ul>
+            <h2>關於我</h2>
+            <ul>
+                <li>謝立郇</li>
+                <li>臺灣人</li>
+                <li>成功大學 108 級電機系</li>
+                <li>喜歡拉小提琴，修車和打電動</li>
+                <li>現在是新加坡管理大學 LARC 研究中心研究工程師</li>
+            </ul>
+        </div>
+        <div class="tab" id="publication">
+            <h2>Not yet</h2>
+        </div>
+
+    </div>
+
+
+</body>
+<script>
+    document.getElementById("default").click();
+</script>
+
+</html>
