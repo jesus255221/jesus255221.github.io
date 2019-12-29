@@ -4,6 +4,7 @@
 <head>
     <title>Hsieh Lee Hsun</title>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
 
@@ -20,10 +21,19 @@
 <style>
     * {
         font-family: monospace;
+        color: #123C69;
+        background-color: #EEE2DC;
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
     }
 
     .sidenav {
-        background-color: darkgray;
+        background-color: #BAB2B5;
+        opacity: 0.7;
         height: 100%;
         width: 15%;
         top: 0;
@@ -39,14 +49,14 @@
         padding-left: 0px;
         /* text-decoration: none; */
         list-style-type: none;
-        font-size: 20px;
-        color: #818181;
+        font-size: 17px;
     }
 
     .sidenav li {
         cursor: pointer;
         padding-top: 4px;
         padding-bottom: 4px;
+        background-color: #BAB2B5;
     }
 
     .sidenav li:hover {
@@ -54,18 +64,20 @@
     }
 
     .main {
+        height: 100%;
         margin-left: 15%;
-        padding-left: 20px;
-        padding-top: 20px;
-
+        font-size: 19px;
+        position: relative;
     }
 
-    .main img {
-        width: 300px;
+    .sidenav img {
+        width: 80%;
     }
 
-    .tab {
+    .tab:not(#home) {
         animation: fadeEffect 0.5s;
+        padding-left: 3%;
+        padding-top: 3%;
         /* Fading effect takes 1 second */
     }
 
@@ -79,6 +91,25 @@
             opacity: 1;
         }
     }
+
+    #home {
+        width: 100%;
+        height: 100%;
+        background-image: url("21586693_1981290678578267_6091127611242186146_o.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #intro {
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 </style>
 
 <body>
@@ -86,16 +117,27 @@
     <!-- Side navigation -->
     <div class="sidenav">
         <ul>
-            <li onclick='openTab("aboutMe")' id="default">About me</li>
+            <li onclick='openTab("home")' id="default">
+                <img src="IMG_4346.JPG">
+                Hsieh Lee Hsun
+            </li>
+            <li onclick='openTab("aboutMe")'>About me</li>
             <li onclick='openTab("publication")'>Publication</li>
-            <li >Research interest</li>
+            <li onclick='openTab("researchInterest")'>Research interest</li>
+            <li onclick='openTab("researchInterest")'>Reseme</li>
+            <li onclick='openTab("contact")'>Contact me</li>
         </ul>
     </div>
 
 
     <!-- Page content -->
     <div class="main">
-        <img src="IMG_4346.JPG">
+        <div class="tab" id="home">
+            <div id="intro">
+                <h1>Hi! I am Hsieh Lee Hsun.</h1>
+                <h1>你好！我是謝立郇</h1>
+            </div>
+        </div>
         <div class="tab" id="aboutMe">
             <h2>About me</h2>
             <ul>
@@ -103,23 +145,32 @@
                 <li>Taiwanese</li>
                 <li>Graduate from National Cheng Kung University in Taiwan majoring in EE</li>
                 <li>Enjoy playing violin, fix my motorcycle and play vedio games</li>
-                <li>Currently work in singapore management university LARC research center as an Research Engineer</li>
+                <li>Currently work in singapore management university LARC research center as an Research Engineer
+                </li>
             </ul>
             <h2>關於我</h2>
             <ul>
                 <li>謝立郇</li>
-                <li>臺灣人</li>
+                <li>花蓮人</li>
                 <li>成功大學 108 級電機系</li>
                 <li>喜歡拉小提琴，修車和打電動</li>
-                <li>現在是新加坡管理大學 LARC 研究中心研究工程師</li>
+                <li>新加坡管理大學 LARC 研究工程師</li>
             </ul>
         </div>
         <div class="tab" id="publication">
             <h2>Not yet</h2>
         </div>
+        <div class="tab" id="researchInterest">
+            <h2>Research Interest</h2>
+            <p>NLP is my main focus now.<br> I leverage different stat-of-the-art language model
+                including BERT and GPT-2 to handle natural language generation </p>
+        </div>
+        <div class="tab" id="contact">
+
+
+        </div>
 
     </div>
-
 
 </body>
 <script>
